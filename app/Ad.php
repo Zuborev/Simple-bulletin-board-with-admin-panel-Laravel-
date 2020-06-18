@@ -9,17 +9,18 @@ class Ad extends Model
 {
     use SoftDeletes;
 
-    protected $fillable =['id', 'title', 'text', 'image', 'user_id', 'category_id', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['id', 'title', 'text', 'image', 'user_id', 'category_id', 'created_at', 'updated_at', 'deleted_at'];
 
     protected $table = 'ads';
 
-    /*   public function author()
-             {
-                 return $this->belongsTo(User::Class, 'user_id');
-             }
-             public function categories()
-             {
-                 return $this->belongsTo(NewsCategories::Class, 'categories_id');
-             }
-             */
+    public function category()
+    {
+        return $this->belongsTo(Category::Class, 'category_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::Class, 'user_id');
+    }
+
 }

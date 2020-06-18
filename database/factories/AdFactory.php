@@ -20,9 +20,9 @@ use Illuminate\Support\Str;
 $factory->define(App\Ad::class, function (Faker $faker) {
 
     return [
-        'title' => 'Bulletin #'.rand(1,33),
-        'text' => $faker->paragraph,
-        'image' => 'public/image/'.rand(1,5).'.jpg',
+        'title' => 'Bulletin:'.$faker->sentence(3),
+        'text' => $faker->text(240).$faker->phoneNumber,
+        'image' => rand(1,5).'.jpg',
         'user_id' => rand(1,5),
         'category_id' => rand(1,5),
     ];
