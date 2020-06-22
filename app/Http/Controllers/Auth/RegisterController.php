@@ -30,10 +30,10 @@ class RegisterController extends Controller
      * @var string
      */
     protected function redirectTo()
-    {
-        // Получить $id
-        return '/';
-    }
+{
+    // Получить $id
+    return '/';
+}
 
     /**
      * Create a new controller instance.

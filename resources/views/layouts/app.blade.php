@@ -29,10 +29,10 @@
         <div class="container">
 {{--                            <span class="navbar-brand btn btn-outline-success">{{ config('app.name', 'Laravel') }}</span>--}}
             @auth
-                <a class="navbar-brand {{ request()->routeIs('index') ? 'text-danger disabled' : '' }}" href="/">
+                <a class="navbar-brand {{ request()->routeIs('site.index') ? 'text-danger disabled' : '' }}" href="/">
                     Main
                 </a>
-                <a class="navbar-brand {{ request()->routeIs('cabinet') ? 'text-danger disabled' : '' }}" href="/cabinet">
+                <a class="navbar-brand {{ request()->routeIs('cabinet.index') ? 'text-danger disabled' : '' }}" href="/cabinet">
                     My account
                 </a>
             @endauth
