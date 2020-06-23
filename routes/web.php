@@ -18,6 +18,9 @@ Route::get('/cabinet', 'CabinetController@index')->name('cabinet.index')->middle
 
 Route::put('/cabinet/save-user/{user}', 'CabinetController@saveUser')->name('cabinet.saveUser')->middleware('auth');
 
+Route::post('/cabinet/store', 'AdController@store')->name('adStore')->middleware('auth');
+Route::delete('/cabinet/ads/{ad}', 'AdController@destroy')->name('adDestroy')->middleware('auth');
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

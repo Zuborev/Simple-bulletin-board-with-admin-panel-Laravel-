@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Ad;
 use App\User;
@@ -15,13 +16,15 @@ class CabinetController extends Controller
 {
 
 
-    public function index(Ad $ad)
+    public function index()
     {
+        $categories = Category::all('id', 'name');
 
         $user = auth()->user();
-        $adsList = $ad->where('user_id', $user->id)->get();
+//        $adsList = $ad->where('user_id', $user->id)->get();
+        $adsList = Ad::where('user_id', $user->id)->get();
 
-        return view('cabinet', compact('adsList', 'user'));
+        return view('cabinet', compact('adsList', 'user', 'categories'));
     }
 
     public function saveUser(UpdateUserRequest $request, User $user)
