@@ -11,8 +11,8 @@
                             @foreach($ads as $ad)
                                 <li class="list-group-item">
                                     <h4>{{ $ad->title }}</h4>
-                                    <img src="/image/{{ $ad->image }}"  width="250px" align="left"
-                                         vspace="5" hspace="5" >
+                                    <img src="/image/{{ $ad->image }}"  width="150px" align="left"
+                                         vspace="5" hspace="5"  class="img-thumbnail img-responsive">
 
                                     <p>{{ $ad->text }}</p>
                                     <div class="float-left">
